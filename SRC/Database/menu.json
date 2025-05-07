@@ -1,0 +1,27 @@
+[
+    {
+        "name": "panner chili",
+        "half_price": 90.0,
+        "full_price": 170.0
+    },
+    {
+        "name": "panner khadhai ",
+        "half_price": 80.0,
+        "full_price": 150.0
+    },
+    {
+        "name": "plain rice ",
+        "half_price": 40.0,
+        "full_price": 70.0
+    },
+    {
+        "name": "jira rice ",
+        "half_price": 50.0,
+        "full_price": 90.0
+    },
+    {
+        "name": "paneer butter mashala ",
+        "half_price": 85.0,
+        "full_price": 160.0
+    }
+]

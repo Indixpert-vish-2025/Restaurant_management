@@ -1,10 +1,11 @@
 from Authentication.admin_login import AdminManager
 from Authentication.staff_login import StaffManager
 from Authentication.customer_login import CustomerManager
+from menu_management.menu_management import MenuManager
 
 def main_menu():
     while True:
-        print("\n====== Restaurant Management System ======")
+        print("\n====== Vishal Restaurant Management System veg only ======")
         print("1. Admin Panel")
         print("2. Staff Panel")
         print("3. Customer Panel")
@@ -31,7 +32,8 @@ def admin_dashboard():
         print("2. Admin Login")
         print("3. View All Admins")
         print("4. Assign Role to Staff")
-        print("5. Back to Main Menu")
+        print("5. Manage Menu")   # ✅ Ye line add karo
+        print("6. Back to Main Menu")  # 🔄 Iska number ab 6 ho gaya
 
         choice = input("Enter your choice: ")
 
@@ -43,7 +45,24 @@ def admin_dashboard():
             AdminManager.show_all_admins()
         elif choice == '4':
             AdminManager.assign_staff_role()
-        elif choice == '5':
+        elif choice == '5':   # ✅ Ye block add karo
+            while True:
+                print("\n---vishal restaurant Menu Management veg only ---")
+                print("1. Add Menu Item")
+                print("2. View Menu")
+                print("3. Back")
+
+                opt = input("Choose an option: ")
+
+                if opt == '1':
+                    MenuManager.add_menu_item()
+                elif opt == '2':
+                    MenuManager.view_menu()
+                elif opt == '3':
+                    break
+                else:
+                    print("Invalid choice.")
+        elif choice == '6':
             break
         else:
             print("Invalid input. Try again.")
