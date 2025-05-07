@@ -3,7 +3,9 @@ import os
 import uuid
 
 class StaffManager:
-    file_path = 'Database/staff_data.json'
+    base_dir = os.path.dirname(os.path.dirname(__file__))
+    file_path = os.path.join(base_dir, 'Database', 'staff_data.json')
+
 
     @staticmethod
     def read_staff():

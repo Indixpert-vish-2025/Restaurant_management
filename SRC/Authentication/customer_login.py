@@ -3,7 +3,9 @@ import os
 import uuid
 
 class CustomerManager:
-    file_path = 'Database/customers.json'
+    base_dir = os.path.dirname(os.path.dirname(__file__))
+    file_path = os.path.join(base_dir, 'Database', 'customers.json')
+
 
     @staticmethod
     def read_customers():

@@ -4,7 +4,7 @@ from Authentication.customer_login import CustomerManager
 
 def main_menu():
     while True:
-        print("\n====== Vishal Restaurant Management System ======")
+        print("\n====== Restaurant Management System ======")
         print("1. Admin Panel")
         print("2. Staff Panel")
         print("3. Customer Panel")
