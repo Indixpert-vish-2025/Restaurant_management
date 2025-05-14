@@ -27,27 +27,42 @@ def main_menu():
 
 def admin_dashboard():
     while True:
+        print("\n--- Admin Access ---")
+        print("1. Login")
+        print("2. Signup")
+        print("3. Back")
+        choice = input("Choose an option: ")
+
+        if choice == '1':
+            if AdminManager.admin_login():
+                admin_panel()
+        elif choice == '2':
+            AdminManager.register_admin()
+        elif choice == '3':
+            break
+        else:
+            print("Invalid input. Try again.")
+
+def admin_panel():  
+    while True:
         print("\n--- Admin Dashboard ---")
-        print("1. Register Admin")
-        print("2. Admin Login")
-        print("3. View All Admins")
-        print("4. Assign Role to Staff")
-        print("5. Manage Menu")   # ✅ Ye line add karo
-        print("6. Back to Main Menu")  # 🔄 Iska number ab 6 ho gaya
+        print("1. View All Admins")
+        print("2. Assign Role to Staff")
+        print("3. Manage Menu")
+        print("4. Back")
 
         choice = input("Enter your choice: ")
 
         if choice == '1':
-            AdminManager.register_admin()
-        elif choice == '2':
-            AdminManager.admin_login()
-        elif choice == '3':
             AdminManager.show_all_admins()
-        elif choice == '4':
-            AdminManager.assign_staff_role()
-        elif choice == '5':   # ✅ Ye block add karo
+        elif choice == '2':
+            if hasattr(AdminManager, 'assign_staff_role'):
+                AdminManager.assign_staff_role()
+            else:
+                print("Assign Role feature not implemented yet.")
+        elif choice == '3':
             while True:
-                print("\n---vishal restaurant Menu Management veg only ---")
+                print("\n--- Vishal Restaurant Menu Management ---")
                 print("1. Add Menu Item")
                 print("2. View Menu")
                 print("3. Back")
@@ -62,49 +77,43 @@ def admin_dashboard():
                     break
                 else:
                     print("Invalid choice.")
-        elif choice == '6':
+        elif choice == '4':
             break
         else:
             print("Invalid input. Try again.")
 
 def staff_dashboard():
     while True:
-        print("\n--- Staff Dashboard ---")
-        print("1. Register Staff")
-        print("2. Staff Login")
-        print("3. View All Staff")
-        print("4. Back to Main Menu")
-
-        choice = input("Enter your choice: ")
+        print("\n--- Staff Access ---")
+        print("1. Login")
+        print("2. Signup")
+        print("3. Back")
+        choice = input("Choose an option: ")
 
         if choice == '1':
-            StaffManager.register_staff()
+            if StaffManager.staff_login():
+                print("Staff options coming soon!")  
         elif choice == '2':
-            StaffManager.staff_login()
+            StaffManager.register_staff()
         elif choice == '3':
-            StaffManager.list_staff()
-        elif choice == '4':
             break
         else:
             print("Invalid input. Try again.")
 
 def customer_dashboard():
     while True:
-        print("\n--- Customer Dashboard ---")
-        print("1. Register Customer")
-        print("2. Customer Login")
-        print("3. View All Customers")
-        print("4. Back to Main Menu")
-
-        choice = input("Enter your choice: ")
+        print("\n--- Customer Access ---")
+        print("1. Login")
+        print("2. Signup")
+        print("3. Back")
+        choice = input("Choose an option: ")
 
         if choice == '1':
-            CustomerManager.register_customer()
+            if CustomerManager.customer_login():
+                print("Customer options coming soon!")  
         elif choice == '2':
-            CustomerManager.customer_login()
+            CustomerManager.register_customer()
         elif choice == '3':
-            CustomerManager.show_customers()
-        elif choice == '4':
             break
         else:
             print("Invalid input. Try again.")

@@ -1,27 +1,42 @@
 [
     {
-        "name": "panner chili",
-        "half_price": 90.0,
-        "full_price": 170.0
+        "name": "paneer chili dry ",
+        "half_price": 60.0,
+        "full_price": 110.0
     },
     {
-        "name": "panner khadhai ",
+        "name": "paneer kadhai ",
+        "half_price": 70.0,
+        "full_price": 130
+    },
+    {
+        "name": "paneer tikka ",
         "half_price": 80.0,
         "full_price": 150.0
     },
     {
-        "name": "plain rice ",
+        "name": "paneer mashala ",
+        "half_price": 75.0,
+        "full_price": 140.0
+    },
+    {
+        "name": "steam rice ",
         "half_price": 40.0,
         "full_price": 70.0
     },
     {
         "name": "jira rice ",
-        "half_price": 50.0,
-        "full_price": 90.0
+        "half_price": 45.0,
+        "full_price": 80.0
     },
     {
-        "name": "paneer butter mashala ",
-        "half_price": 85.0,
-        "full_price": 160.0
+        "name": "paneer butter mashala",
+        "half_price": 80.0,
+        "full_price": 150.0
+    },
+    {
+        "name": "paneer do pyaja",
+        "half_price": 70.0,
+        "full_price": 130.0
     }
 ]

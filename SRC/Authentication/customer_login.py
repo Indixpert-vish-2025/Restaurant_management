@@ -19,37 +19,37 @@ class CustomerManager:
         with open(CustomerManager.file_path, 'w') as f:
             json.dump(data, f, indent=4)
 
-    @classmethod
-    def register_customer(cls):
-        cname = input("Customer Name: ")
-        cphone = input("Mobile Number: ")
-        caddress = input("Address: ")
-        cid = str(uuid.uuid4())[:8]
+@classmethod
+def register_customer(cls):
+    name = input("Customer Name: ")
+    email = input("Email: ")
+    password = input("Password: ")
+    customer_id = str(uuid.uuid4())[:8]
 
-        new_customer = {
-            "customer_id": cid,
-            "name": cname,
-            "phone": cphone,
-            "address": caddress
-        }
+    new_customer = {
+        "customer_id": customer_id,
+        "name": name,
+        "email": email,
+        "password": password
+    }
 
-        data = cls.read_customers()
-        data.append(new_customer)
-        cls.write_customers(data)
-        print(f"Customer '{cname}' registered successfully!")
+    data = cls.read_customers()
+    data.append(new_customer)
+    cls.write_customers(data)
+    print(f"Customer '{name}' registered successfully!")
 
-    @classmethod
-    def customer_login(cls):
-        cname = input("Enter Name: ")
-        cphone = input("Enter Mobile Number: ")
+@classmethod
+def customer_login(cls):
+    email = input("Enter Email: ")
+    password = input("Enter Password: ")
 
-        data = cls.read_customers()
-        for customer in data:
-            if customer["name"] == cname and customer["phone"] == cphone:
-                print(f"Welcome {cname}, login successful!")
-                return True
-        print("Login failed! Incorrect credentials.")
-        return False
+    data = cls.read_customers()
+    for customer in data:
+        if customer["email"] == email and customer["password"] == password:
+            print(f"Welcome {customer['name']}, login successful!")
+            return True
+    print("Login failed! Incorrect credentials.")
+    return False
 
     @classmethod
     def show_customers(cls):
